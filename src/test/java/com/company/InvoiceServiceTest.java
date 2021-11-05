@@ -15,6 +15,15 @@ public class InvoiceServiceTest {
 
     }
 
+    @Test
+    public void givenLessDistAndTime_ShouldReturnInFare() {
+        InvoiceGenerator invoiceGenerator = new InvoiceGenerator();
+        double distance = 0.1;
+        int time = 1;
+        double fare = invoiceGenerator.calculateFare(distance, time);
+        Assert.assertEquals(5, fare, 0.0);
+    }
+
 
 
     public static void main(String[] args) {
